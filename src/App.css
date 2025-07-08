@@ -1,0 +1,13 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgb(235, 253, 255) 0%, rgb(209, 224, 245) 100%);
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+  
+
