@@ -172,7 +172,7 @@ function Vendor() {
                 <p>File Name: Plato SCX {dayNumber}{monthNumber}.4.txt</p>
                 <p>Total sheet data count: {totalCount}</p>
                 <p>Total success data count: {successCount}</p>
-                <p>Total Amount: {totalAmount.toFixed(2)}</p>
+                <p>Total Amount: {totalAmount}</p>
               </div>
             </div>
           }
