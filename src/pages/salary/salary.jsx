@@ -44,7 +44,8 @@ function Salary() {
 
 
       const year = date.getFullYear();
-      const monthName = date.toLocaleString("default", { month: "long" });
+      const prevMonthDate = new Date(date.getFullYear(), date.getMonth() - 1, 1);
+      const monthName = prevMonthDate.toLocaleString("default", { month: "long" });
       const formattedDate = `${dayNumber}/${monthNumber}/${year}`;
       const monthNameShort = monthName.slice(0, 3);
 
@@ -64,7 +65,7 @@ function Salary() {
           [
             "N,",
             String(row[15]).trim(""),
-            String(row[8]).trim(""),
+            String(Math.floor(row[8])).trim(""),
             String(row[1])?.trim(""),
             ",,,,,,,",
             `${monthNameShort}Salary`,
@@ -81,7 +82,7 @@ function Salary() {
       }
       setTotalCount(totalDataCount - 1);
       setSuccessCount(totalSuccessCount);
-      setTotalSalary(totalSalary);
+      setTotalSalary(Math.floor(totalSalary));
       setFileData(filteredData);
     };
 
@@ -149,7 +150,7 @@ function Salary() {
                 <p>File Name: Plato SCX {dayNumber}{monthNumber}.4.txt</p>
                 <p>Total sheet data count: {totalCount}</p>
                 <p>Total success data count: {successCount}</p>
-                <p>Total Salary: {totalSalary.toFixed(2)}</p>
+                <p>Total Salary: {totalSalary}</p>
               </div>
             </div>
           }
